@@ -1,4 +1,3 @@
-require('eft.highlight')
 local config = require('eft.config')
 
 local M = {}
