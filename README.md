@@ -63,11 +63,11 @@ eft.setup(
 ## Keymaps
 
 ```lua
-vim.api.nvim_set_keymap('n', 'f', '<CMD>lua require("action").eft_f()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'F', '<CMD>lua require("action").eft_F()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 't', '<CMD>lua require("action").eft_t()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'T', '<CMD>lua require("action").eft_T()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', ';', '<CMD>lua require("action").eft_repeat()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'f', '<CMD>lua require("eft.action").eft_f()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'F', '<CMD>lua require("eft.action").eft_F()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 't', '<CMD>lua require("eft.action").eft_t()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'T', '<CMD>lua require("eft.action").eft_T()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', ';', '<CMD>lua require("eft.action").eft_repeat()<CR>', {noremap = true, silent = true})
 ```
 
 ## Thanks
