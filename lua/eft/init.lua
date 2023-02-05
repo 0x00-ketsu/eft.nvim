@@ -1,5 +1,8 @@
 local config = require('eft.config')
 
+---@class Global 'Plugin declared global variables'
+---@field vim.g.eft_state table 'Store data for plugin'
+
 local M = {}
 
 ---Entrance
