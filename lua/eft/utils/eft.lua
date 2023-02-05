@@ -5,7 +5,6 @@ local tbl = require('eft.utils.tbl')
 local helper = require('eft.utils.helper')
 
 local options = config.opts
-vim.g.eft_mapping = false
 
 ---Returns true if two chars is equal, works with option: `ignore_case`
 ---
