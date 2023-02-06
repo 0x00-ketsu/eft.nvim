@@ -50,7 +50,7 @@ end
 ---@param is_repeat boolean
 ---@return boolean
 local function can_repeat(dir, till, is_repeat)
-  local mode = fn.mode(1)
+  local mode = api.nvim_get_mode().mode
   local state = vim.g.eft_state
   local ok = false
   ok = is_repeat and not vim.tbl_isempty(state)
@@ -124,7 +124,7 @@ end
 ---@param till boolean
 ---@param is_repeat boolean
 M.jump = function(dir, till, is_repeat)
-  local mode = fn.mode(1)
+  local mode = api.nvim_get_mode().mode
   local curpos = fn.getcurpos()
   local line = fn.getline(curpos[2])
   local curcol = curpos[3]
