@@ -124,7 +124,7 @@ M.can_index = function(line, index)
     return true
   end
 
-  local funcs = {M.is_printable, M.is_letter, M.is_digit, M.is_space}
+  local funcs = {M.is_character}
   for _, func in ipairs(funcs) do
     if func(line, index) then
       return true
@@ -143,6 +143,16 @@ M.is_printable = function(line, index)
   local char = line:sub(index, index)
   -- return char:match('%g')
   return helper.is_printable(char)
+end
+
+---Returns true if character is a character
+---
+---@param line string
+---@param index integer
+---@return boolean
+M.is_character = function (line, index)
+  local char = line:sub(index, index)
+  return char:match('.-')
 end
 
 ---Returns true if character is a letter (case insensitive)
