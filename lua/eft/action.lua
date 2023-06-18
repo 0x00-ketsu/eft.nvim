@@ -132,8 +132,14 @@ M.jump = function(dir, till, is_repeat)
 
   local indices = {}
   if dir == DIRECTIONS.next then
+    if #line == 0 then
+      return
+    end
     indices = fn.range(curcol + tilloff, #line)
   else
+    if curcol - (2 + tilloff) == -1 then
+      return
+    end
     indices = fn.range(curcol - (2 + tilloff), 0, -1)
   end
 
