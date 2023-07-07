@@ -55,8 +55,6 @@ M.highlight_chars = function(line, indices)
   local cnt = 1
   local chars, highs = {}, {}
   for _, idx in pairs(indices) do
-    -- print(M.can_index(line, idx + 1), line:sub(idx+1, idx+1))
-
     if M.can_index(line, idx + 1) then
       local char = line:sub(idx + 1, idx + 1)
       if #char < 1 then
@@ -141,7 +139,6 @@ end
 ---@return boolean
 M.is_printable = function(line, index)
   local char = line:sub(index, index)
-  -- return char:match('%g')
   return helper.is_printable(char)
 end
 
