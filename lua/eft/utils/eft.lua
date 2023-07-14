@@ -1,10 +1,10 @@
 local fn = vim.fn
 
-local config = require('eft.config')
+local config = require('eft').config
 local tbl = require('eft.utils.tbl')
 local helper = require('eft.utils.helper')
 
-local options = config.opts
+-- local config = config.opts
 
 ---Returns true if two chars is equal, works with option: `ignore_case`
 ---
@@ -12,7 +12,7 @@ local options = config.opts
 ---@param char2 string
 ---@return boolean
 local function match(char1, char2)
-  if options['ignore_case'] then
+  if config['ignore_case'] then
     return string.lower(char1) == string.lower(char2)
   end
 
@@ -47,7 +47,7 @@ end
 ---@param indices table
 ---@return table
 M.highlight_chars = function(line, indices)
-  local highlights = options['highlights']
+  local highlights = config['highlights']
   if vim.tbl_isempty(highlights) or fn.reg_executing() ~= '' then
     return {}
   end

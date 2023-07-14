@@ -57,8 +57,6 @@ eft.setup(
           color = {                 -- color for highlight
             gui = 'bold,underline',
             guifg = 'Orange',
-            cterm = 'bold,underline',
-            ctermfg = 'Red'
           }
         },
         {
@@ -67,8 +65,6 @@ eft.setup(
           color = {
             gui = 'bold,underline',
             guifg = 'Gray',
-            cterm = 'bold,underline',
-            ctermfg = 'Gray'
           }
         }
       }
