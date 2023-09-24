@@ -14,6 +14,7 @@ Highlight character(s) in line when press keyboard `f` `t` `F` `T`.
   -- Lua
   require('lazy').setup({
     '0x00-ketsu/eft.nvim',
+    lazy = true,
     config = function()
       require('eft').setup {
         -- your configuration comes here
