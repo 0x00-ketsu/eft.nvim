@@ -12,7 +12,7 @@ local function define_highlight(options)
       end
       expr = expr .. ' ' .. key .. '=' .. value .. ''
     end
-    vim.cmd("hi! default " .. name .. expr)
+    vim.cmd('hi! default ' .. name .. expr)
   end
 end
 
@@ -25,13 +25,14 @@ local defaults = {
     {
       name = 'EftChar',
       allow_space = true,
-      color = {gui = 'bold,underline', guifg = 'Orange', cterm = 'bold,underline'}
-    }, {
+      color = { gui = 'bold,underline', guifg = 'Orange', cterm = 'bold,underline' },
+    },
+    {
       name = 'EftSubChar',
       allow_space = false,
-      color = {gui = 'bold,underline', guifg = 'Gray', cterm = 'bold,underline'}
-    }
-  }
+      color = { gui = 'bold,underline', guifg = 'Gray', cterm = 'bold,underline' },
+    },
+  },
 }
 
 local M = {}

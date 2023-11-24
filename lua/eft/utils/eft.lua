@@ -1,8 +1,8 @@
 local fn = vim.fn
 
 local config = require('eft').config
-local tbl = require('eft.utils.tbl')
 local helper = require('eft.utils.helper')
+local tbl = require('eft.utils.tbl')
 
 -- local config = config.opts
 
@@ -77,7 +77,7 @@ M.highlight_chars = function(line, indices)
       ok = ok and match_highlight
       ok = ok and (match_highlight['allow_space'] or char:match('%S'))
       if ok then
-        table.insert(highs, {match_highlight['name'], idx + 1, char})
+        table.insert(highs, { match_highlight['name'], idx + 1, char })
       end
     end
 
@@ -88,7 +88,7 @@ M.highlight_chars = function(line, indices)
   local highlighted_ids = {}
   for _, item in pairs(highs) do
     ---@diagnostic disable-next-line
-    local highlighted_id = fn.matchaddpos(item[1], {{fn.line('.'), item[2]}})
+    local highlighted_id = fn.matchaddpos(item[1], { { fn.line('.'), item[2] } })
     if highlighted_id > -1 then
       table.insert(highlighted_ids, highlighted_id)
     end
@@ -122,7 +122,7 @@ M.can_index = function(line, index)
     return true
   end
 
-  local funcs = {M.is_character}
+  local funcs = { M.is_character }
   for _, func in ipairs(funcs) do
     if func(line, index) then
       return true
@@ -147,7 +147,7 @@ end
 ---@param line string
 ---@param index integer
 ---@return boolean
-M.is_character = function (line, index)
+M.is_character = function(line, index)
   local char = line:sub(index, index)
   return char:match('.-')
 end

@@ -13,17 +13,18 @@ local utils = require('eft.utils.eft')
 vim.g.eft_state = {}
 
 ---@enum directions
-local DIRECTIONS = {prev = -1, next = 1}
+local DIRECTIONS = { prev = -1, next = 1 }
 
 ---Remove autocmds for autogroup: `EFT_ACTION`
 ---
 local function empty_aug_for_action()
   api.nvim_exec(
-      [[
+    [[
 		aug EFT_ACTION
 			au!
 		aug END
-	]], false
+	]],
+    false
   )
 end
 
@@ -34,12 +35,13 @@ local function reset()
 
   empty_aug_for_action()
   api.nvim_exec(
-      [[
+    [[
 		aug EFT_ACTION
 			au!
       au CursorMoved <buffer> execute "lua require('eft.action').reset()"
 		aug END
-	]], false
+	]],
+    false
   )
 end
 

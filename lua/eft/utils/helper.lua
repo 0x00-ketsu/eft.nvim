@@ -6,7 +6,7 @@ local M = {}
 ---
 ---@param char string
 ---@return boolean
-M.is_printable = function (char)
+M.is_printable = function(char)
   local charnr = fn.char2nr(char)
   if charnr >= 32 and charnr <= 126 then
     return true
@@ -16,7 +16,7 @@ M.is_printable = function (char)
 end
 
 ---Gets a single printable or blank character from the user input.
----Returns empty string for oterwise.
+---Returns empty string for otherwise.
 ---
 ---@return string
 M.getchar = function()
@@ -33,7 +33,7 @@ end
 ---@param mode string
 ---@return boolean
 M.is_operator_pending = function(mode)
-  return fn.index({'no', 'nov', 'noV', 'no<C-v>'}, mode) >= 0
+  return fn.index({ 'no', 'nov', 'noV', 'no<C-v>' }, mode) >= 0
 end
 
 return M
