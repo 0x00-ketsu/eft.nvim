@@ -163,7 +163,12 @@ M.jump = function(dir, till, is_repeat)
         jump_col = jump_col - 1
       end
       -- move cursor to column position
-      api.nvim_win_set_cursor(0, { vim.api.nvim_win_get_cursor(0)[1], jump_col - 1 })
+      if vim.fn.has('nvim-0.10') == 1 and vim.lsp.inlay_hint.is_enabled() then
+        api.nvim_win_set_cursor(0, { vim.api.nvim_win_get_cursor(0)[1], jump_col - 1 })
+      else
+        local expr = 'normal! ' .. (helper.is_operator_pending(mode) and 'v' or '') .. jump_col .. '|'
+        vim.cmd(expr)
+      end
 
       local state = {}
       state['direction'] = dir
